@@ -1,0 +1,14 @@
+sort1 uses: Bubble Sort
+
+How do you know?: I ran sort1 on quite a few times per text file and it always seemed to average around ~0.300ms (real time) for the most part,
+                  according to my observations, this was the slowest algorithm.
+
+sort2 uses: Merge Sort
+
+How do you know?: Just like sort1, I ran sort2 quite a few times per text file and the average was ~0.090ms,
+                                   lightning fast compared to the other two algorithms, this led me to believe this was Merge Sort.
+
+sort3 uses: Selection Sort
+
+How do you know?: sort3 had the second fastest average time of ~0.150ms according to my findings, was quite a bit faster or close to sort1
+                  but not nearly as fast as sort2.

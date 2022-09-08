@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+<div>
+    <main class="container py-5 text-center">
+        <table class="table table-striped">
+            <thead>
+                <h1> History </h1>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="text-start"> Symbol </th>
+                    <th class="text-start"> Shares </th>
+                    <th class="text-start"> Price </th>
+                    <th class="text-end"> Action </th>
+                    <th class="text-end"> Total </th>
+                </tr>
+                {% for i in range(count) %}
+                    <tr>
+                        <td class="text-start"> {{ symbol[i] }} </td>
+                        <td class="text-start"> {{ shares[i] }} </td>
+                        <td class="text-start"> {{ price[i] | usd }} </td>
+                        <td class="text-end"> {{ action[i] }} </td>
+                        <td class="text-end"> {{ time[i] }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/clear" method="post">
+            <button class="btn btn-primary" type="submit">Clear History</button>
+        </form>
+    </main>
+</div>
+{% endblock %}

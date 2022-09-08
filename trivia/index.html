@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Wait for DOM to load
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Correct answer clicked -> Button turns green
+                // Give user feedback, telling them they got the answer correct
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#mark0').innerHTML = "Correct answer!";
+                });
+
+                // Incorrect answer clicked -> Button turns red
+                // Give user feedback, telling them they got the answer incorrect
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function() {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#mark0').innerHTML = "Incorrect answer!";
+                    });
+                }
+
+                // Checks if user input the right answer
+                // Change colour of button depending on the answer
+                // Give the user feedback
+                document.querySelector('#answer').addEventListener('click', function() {
+                    let input = document.querySelector('input')
+                    if (input.value === "Octothorpe") {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#mark1').innerHTML = 'Correct answer!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#mark1').innerHTML = 'Incorrect answer!';
+                    }
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3> What is the minimum amount of guinea pig(s) you can own in Switzerland? </h3>
+                <button class="incorrect">1 guinea pig</button>
+                <button class="correct">2 guinea pigs</button>
+                <button class="incorrect">3 guinea pigs</button>
+                <p id="mark0"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3> What is the real name of the hashtag? </h3>
+                <input type="text"></input>
+                <button id="answer">Submit</button>
+                <p id="mark1"></p>
+            </div>
+        </div>
+    </body>
+</html>
